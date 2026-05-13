@@ -1,8 +1,8 @@
 class Contas:
-    def __init__(self, titular, numero):
+    def __init__(self, titular, telefone):
         self.titular = titular.nome
-        self.numero = numero.telefone1
-        self._saldo = 0.0
+        self.telefone = telefone.telefone
+        self._saldo = 0.00
 
     def saque(self, valor):
         if self.saldo >= valor:
@@ -12,6 +12,10 @@ class Contas:
             print("Saldo insuficiente")
 
     def deposito(self, valor):
+        if valor <= 0:
+            print("Nao Pode depositar nada ou numeros negativos")
+
+
         self.saldo += valor
 
     def estrato(self):
